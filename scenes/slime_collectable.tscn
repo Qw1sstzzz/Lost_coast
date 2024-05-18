@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpjiw42dwsl5r"]
+
+[ext_resource type="Texture2D" uid="uid://btor2o3ax242d" path="res://art/Character/slime_collectable.png" id="1_nsbdo"]
+
+[node name="slime_collectable" type="StaticBody2D"]
+z_as_relative = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_nsbdo")

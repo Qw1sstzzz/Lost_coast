@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dq7h3miog2c2i"]
+[gd_scene load_steps=25 format=3 uid="uid://dq7h3miog2c2i"]
 
 [ext_resource type="PackedScene" uid="uid://dbtdnmhjlncb7" path="res://scenes/player.tscn" id="1_fipih"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_jaqv6"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bklix3jd48ali" path="res://art/World/Grass biom.png" id="6_88u6t"]
 [ext_resource type="Texture2D" uid="uid://dx0lonh7p0v4a" path="res://art/World/water-Sheet.png" id="6_m4a72"]
 [ext_resource type="PackedScene" uid="uid://cxoit0ji40pyx" path="res://scenes/apple_tree.tscn" id="9_qny2x"]
+[ext_resource type="PackedScene" uid="uid://duusbt4xsejf1" path="res://scenes/in_game_menu.tscn" id="10_0g7as"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0luj5"]
 size = Vector2(21.5, 37)
@@ -800,6 +801,8 @@ position = Vector2(232, -101)
 
 [node name="apple_tree3" parent="." instance=ExtResource("9_qny2x")]
 position = Vector2(216, 84)
+
+[node name="InGameMenu" parent="." instance=ExtResource("10_0g7as")]
 
 [connection signal="body_entered" from="village_transition_point" to="." method="_on_village_transition_point_body_entered"]
 [connection signal="body_exited" from="village_transition_point" to="." method="_on_village_transition_point_body_exited"]

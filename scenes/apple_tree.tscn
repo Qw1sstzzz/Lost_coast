@@ -35,10 +35,11 @@ animations = [{
 radius = 27.2947
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2l4vx"]
-radius = 6.0
-height = 16.0
+radius = 9.0
+height = 18.0
 
 [node name="apple_tree" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_eigke")
 item = ExtResource("2_f3ksb")
 
@@ -60,7 +61,7 @@ one_shot = true
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 7)
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_2l4vx")
 
 [connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]

@@ -1,0 +1,273 @@
+[gd_scene load_steps=7 format=3 uid="uid://4toqbq81330i"]
+
+[ext_resource type="Script" path="res://scripts/Video.gd" id="2_ddm1b"]
+[ext_resource type="Texture2D" uid="uid://25jo32nqd1o2" path="res://art/Style/back 1.jpg" id="2_li21n"]
+[ext_resource type="Script" path="res://scripts/Audio.gd" id="3_40h6n"]
+[ext_resource type="Script" path="res://scripts/BackButton.gd" id="3_k252a"]
+[ext_resource type="Theme" uid="uid://bxbbtekis5o2a" path="res://art/Style/Default.tres" id="4_4wvyf"]
+
+[sub_resource type="GDScript" id="GDScript_reoyh"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_reoyh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1718.0
+offset_bottom = 1086.0
+texture = ExtResource("2_li21n")
+expand_mode = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Settings" type="TabContainer" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+
+[node name="Video" type="TabBar" parent="CanvasLayer/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+script = ExtResource("2_ddm1b")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Settings/Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings/Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fullscreen" type="Label" parent="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Fullscreen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Borderless" type="Label" parent="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Borderless"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSync" type="Label" parent="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "VSync"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Settings/Video/HBoxContainer"]
+layout_mode = 2
+
+[node name="Fullscreen" type="CheckBox" parent="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+
+[node name="Borderless" type="CheckBox" parent="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+
+[node name="VSync" type="OptionButton" parent="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 50
+item_count = 4
+selected = 1
+popup/item_0/text = "Disabled"
+popup/item_0/id = 0
+popup/item_1/text = "Enabled"
+popup/item_1/id = 1
+popup/item_2/text = "Adaptive"
+popup/item_2/id = 2
+popup/item_3/text = "Mailbox"
+popup/item_3/id = 3
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Settings/Video"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("3_k252a")
+
+[node name="Audio" type="TabBar" parent="CanvasLayer/Settings"]
+visible = false
+layout_mode = 2
+script = ExtResource("3_40h6n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Settings/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -21.0
+offset_right = 24.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Settings/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Master" type="Label" parent="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Master"
+
+[node name="Music" type="Label" parent="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Music"
+
+[node name="SFX" type="Label" parent="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "SFX"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Settings/Audio/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Master" type="HSlider" parent="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.05
+
+[node name="Music" type="HSlider" parent="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.05
+
+[node name="SFX" type="HSlider" parent="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+max_value = 1.0
+step = 0.05
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Settings/Audio"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("3_k252a")
+
+[node name="Controls" type="TabBar" parent="CanvasLayer/Settings"]
+visible = false
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Settings/Controls"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("3_k252a")
+
+[node name="About us" type="TabBar" parent="CanvasLayer/Settings"]
+visible = false
+layout_mode = 2
+
+[node name="Information" type="Label" parent="CanvasLayer/Settings/About us"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -28.5
+offset_right = 307.0
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_4wvyf")
+theme_override_font_sizes/font_size = 40
+text = "Game was created as a project work and released in 2024.
+
+Hope, you guys enjoyed it. I hope I will keep working and improving it."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Settings/About us"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+script = ExtResource("3_k252a")
+
+[connection signal="toggled" from="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2/Fullscreen" to="CanvasLayer/Settings/Video" method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2/Borderless" to="CanvasLayer/Settings/Video" method="_on_borderless_toggled"]
+[connection signal="item_selected" from="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2/VSync" to="CanvasLayer/Settings/Video" method="_on_v_sync_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Settings/Video/BackButton" to="CanvasLayer/Settings/Video/BackButton" method="_on_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer2/Master" to="CanvasLayer/Settings/Audio" method="_on_master_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer2/Music" to="CanvasLayer/Settings/Audio" method="_on_music_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Settings/Audio/HBoxContainer/VBoxContainer2/SFX" to="CanvasLayer/Settings/Audio" method="_on_sfx_value_changed"]
+[connection signal="pressed" from="CanvasLayer/Settings/Audio/BackButton" to="CanvasLayer/Settings/Audio/BackButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/Controls/BackButton" to="CanvasLayer/Settings/Controls/BackButton" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/About us/BackButton" to="CanvasLayer/Settings/About us/BackButton" method="_on_pressed"]

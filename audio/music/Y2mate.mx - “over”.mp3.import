@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://o5y74g5d8k8r"
+path="res://.godot/imported/Y2mate.mx - “over”.mp3-a0340b182fb7506d5411f62aae295e06.mp3str"
+
+[deps]
+
+source_file="res://audio/music/Y2mate.mx - “over”.mp3"
+dest_files=["res://.godot/imported/Y2mate.mx - “over”.mp3-a0340b182fb7506d5411f62aae295e06.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

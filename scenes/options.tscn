@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://4toqbq81330i"]
+[gd_scene load_steps=8 format=3 uid="uid://4toqbq81330i"]
 
 [ext_resource type="Script" path="res://scripts/Video.gd" id="2_ddm1b"]
 [ext_resource type="Texture2D" uid="uid://25jo32nqd1o2" path="res://art/Style/back 1.jpg" id="2_li21n"]
 [ext_resource type="Script" path="res://scripts/Audio.gd" id="3_40h6n"]
 [ext_resource type="Script" path="res://scripts/BackButton.gd" id="3_k252a"]
 [ext_resource type="Theme" uid="uid://bxbbtekis5o2a" path="res://art/Style/Default.tres" id="4_4wvyf"]
+[ext_resource type="AudioStream" uid="uid://cwjho7ut3c4w7" path="res://audio/music/Y2mate.mx - Sparkle_menu.mp3" id="6_lebfn"]
 
 [sub_resource type="GDScript" id="GDScript_reoyh"]
 
@@ -260,6 +261,12 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Back"
 script = ExtResource("3_k252a")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lebfn")
+volume_db = -25.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="toggled" from="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2/Fullscreen" to="CanvasLayer/Settings/Video" method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="CanvasLayer/Settings/Video/HBoxContainer/VBoxContainer2/Borderless" to="CanvasLayer/Settings/Video" method="_on_borderless_toggled"]

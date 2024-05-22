@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://uinsba4jmjy5"]
+[gd_scene load_steps=28 format=3 uid="uid://uinsba4jmjy5"]
 
 [ext_resource type="Texture2D" uid="uid://4fjsotjgl46v" path="res://art/World/ground/Grass.png" id="1_fj4ya"]
 [ext_resource type="Script" path="res://scripts/village.gd" id="1_mwfka"]
@@ -9,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cx76cmy7y00la" path="res://art/World/Tilled Dirt.png" id="5_vai7s"]
 [ext_resource type="Texture2D" uid="uid://cx55m14f6jvys" path="res://art/World/Wood_Bridge.png" id="6_ud2ru"]
 [ext_resource type="Texture2D" uid="uid://dpswvwwxnmn8p" path="res://art/World/Wooden House.png" id="9_sfhmt"]
-[ext_resource type="Texture2D" uid="uid://b62kf81nyhiee" path="res://art/World/boss_island/spawner.png" id="10_gqld0"]
 [ext_resource type="Texture2D" uid="uid://d25fnyd82py7b" path="res://art/World/ground/Grass_forest.png" id="11_j164o"]
+[ext_resource type="AudioStream" uid="uid://o5y74g5d8k8r" path="res://audio/music/Y2mate.mx - “over”.mp3" id="12_2daic"]
 [ext_resource type="PackedScene" uid="uid://duusbt4xsejf1" path="res://scenes/in_game_menu.tscn" id="12_2eqg1"]
+[ext_resource type="PackedScene" uid="uid://h8o334umi4on" path="res://scenes/npc.tscn" id="13_ef2tf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pmal2"]
 texture = ExtResource("1_fj4ya")
@@ -855,7 +856,6 @@ texture = ExtResource("9_sfhmt")
 6:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpqsj"]
-texture = ExtResource("10_gqld0")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1170,6 +1170,15 @@ wait_time = 5.0
 autostart = true
 
 [node name="InGameMenu" parent="." instance=ExtResource("12_2eqg1")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_2daic")
+volume_db = -25.0
+autoplay = true
+bus = &"Music"
+
+[node name="npc" parent="." instance=ExtResource("13_ef2tf")]
+position = Vector2(199, 421)
 
 [connection signal="body_entered" from="village_exit_point" to="." method="_on_village_exit_point_body_entered"]
 [connection signal="body_exited" from="village_exit_point" to="." method="_on_village_exit_point_body_exited"]

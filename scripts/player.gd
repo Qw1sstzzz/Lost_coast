@@ -11,6 +11,7 @@ var arrow = preload('res://scenes/arrow.tscn')
 var mouse_loc_from_player = null
 @onready var camera = $Camera2D
 
+
 func _physics_process(delta):
 	mouse_loc_from_player = get_global_mouse_position() - self.position
 	
@@ -23,7 +24,9 @@ func _physics_process(delta):
 		player_state = "walking"
 	
 	velocity = direction*speed
+	
 	move_and_slide()
+	
 	
 	if Input.is_action_just_pressed('right_mouse'):
 		if bow_equiped:

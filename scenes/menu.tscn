@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba37bc0utpqxi"]
+[gd_scene load_steps=6 format=3 uid="uid://ba37bc0utpqxi"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_6awj4"]
 [ext_resource type="Theme" uid="uid://bxbbtekis5o2a" path="res://art/Style/Default.tres" id="2_0gr2f"]
 [ext_resource type="Texture2D" uid="uid://chelyou01hnfh" path="res://art/Style/back_blur.jpg" id="2_0tngy"]
+[ext_resource type="AudioStream" uid="uid://cwjho7ut3c4w7" path="res://audio/music/Y2mate.mx - Sparkle_menu.mp3" id="4_ln2os"]
+[ext_resource type="AudioStream" uid="uid://ngmh08bd1762" path="res://audio/sfx/interface-click.wav" id="5_etu8o"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -63,6 +65,16 @@ layout_mode = 2
 theme = ExtResource("2_0gr2f")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ln2os")
+volume_db = -25.0
+autoplay = true
+bus = &"Music"
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_etu8o")
+volume_db = -10.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
